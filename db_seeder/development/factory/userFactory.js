@@ -1,5 +1,5 @@
 const faker = require('faker');
-const {UserTypes} = require("../../models/userModel");
+const {UserTypes} = require("../../src/models/userModel");
 faker.locale = 'en';
 
 const userFactory = (times = 1) => {

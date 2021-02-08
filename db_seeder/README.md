@@ -16,17 +16,17 @@ cp .env.example .env
 
 ### To Generate fake data
 
-1. Make DataFactory file in : `src/development/factory/yourFactoryFile.js`
+1. Make DataFactory file in : `development/factory/yourFactoryFile.js`
 
-2. Make Seeder file in : `src/development/seeder/yourSeederFile.js`
+2. Make Seeder file in : `development/seeder/yourSeederFile.js`
 
-3. Create npm script in `pacakage.json` file ` "seed:modelName": "node src/development/seeder/yourSeederFile.js",`
+3. Create npm script in `pacakage.json` file ` "seed:modelName": "node development/seeder/yourSeederFile.js",`
 
 4. Generate data `npm run seed:modelName`
 
 ### Example
 
-Detailed example to generate json file which contains fake user's data. output file in `src/development/seedData/users.json`
+Detailed example to generate json file which contains fake user's data. output file in `development/seedData/users.json`
 
 #### # Command
 
@@ -45,7 +45,7 @@ To generate 10 users pass count argument as per below example
 "scripts": {
     ..
     ...
-    "seed:users": "cross-env NODE_ENV=development COUNT=3 node src/development/seeder/userSeeder.js",
+    "seed:users": "cross-env NODE_ENV=development COUNT=3 node development/seeder/userSeeder.js",
   },
 }
 ```
@@ -121,7 +121,7 @@ module.exports.Job = mongoose.model('USER', userSchema);
 
 ```javascript
 /*
-* Path: src/development/factory/userFactory.js
+* Path: development/factory/userFactory.js
 * */
 
 const faker = require('faker');
@@ -166,14 +166,14 @@ module.exports = userFactory;
 
 ```javascript
 /*
-* Path: src/development/seeder/userSeeder.js
+* Path: development/seeder/userSeeder.js
 * */
 
 const userFactory = require('../factory/userFactory');
 const storeData = require('../utils/storeData');
 
 const COUNT = process.argv[2] ? process.argv[2] : process.env.COUNT || 10
-const outputFile = 'src/development/seedData/users.json'
+const outputFile = 'development/seedData/users.json'
 
 const fakeDataPromises = userFactory(COUNT);
 
@@ -225,7 +225,7 @@ userSeeder fakeData:: [
     meta: { count: 2, created_at: 2020-02-14T22:08:09.354Z }
   }
 ]
-Output: src/development/seedData/users.json
+Output: development/seedData/users.json
 FakeData, generated total records: 2
 Done in 1.17s.
 ```

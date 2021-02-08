@@ -11,8 +11,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "debug": "cross-env NODE_ENV=development PORT=3001 nodemon src/index.js",
-    "seed:users": "cross-env NODE_ENV=development COUNT=3 node src/development/seeder/userSeeder.js",
-    "db:clear": "cross-env NODE_ENV=development node src/development/database/removeCollections.js"
+    "seed:users": "cross-env NODE_ENV=development COUNT=3 node development/seeder/userSeeder.js",
+    "db:clear": "cross-env NODE_ENV=development node development/database/removeCollections.js"
   },
   "keywords": [
     "Fake",
