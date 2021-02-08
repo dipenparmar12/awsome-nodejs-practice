@@ -1,21 +1,25 @@
 const mongoose = require('mongoose');
 const app = require('./app');
 const config = require('./config');
-const logger = require('./config/logger');
+const consoles = require('../development/consoles');
 
 let server;
 
 mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
-  logger.info(`Connected to MongoDB` /* ${config.mongoose.url} */);
+  console.debug(`Connected to MongoDB`);
   server = app.listen(config.port, () => {
-    logger.info(`Listening to port: ${config.port}`);
+    console.log(`Listening to port: ${config.port}`);
+
+    if (config.env === 'development') {
+      Object.values(consoles()).forEach((fn) => fn());
+    }
   });
 });
 
 const exitHandler = () => {
   if (server) {
     server.close(() => {
-      logger.info('Server closed');
+      console.debug(`Listening to port: ${config.port}`);
       process.exit(1);
     });
   } else {
@@ -24,7 +28,7 @@ const exitHandler = () => {
 };
 
 const unexpectedErrorHandler = (error) => {
-  logger.error(error);
+  console.error(error);
   exitHandler();
 };
 
@@ -32,8 +36,10 @@ process.on('uncaughtException', unexpectedErrorHandler);
 process.on('unhandledRejection', unexpectedErrorHandler);
 
 process.on('SIGTERM', () => {
-  logger.info('SIGTERM received');
+  console.info('SIGTERM received');
   if (server) {
     server.close();
   }
 });
+
+module.exports = server;

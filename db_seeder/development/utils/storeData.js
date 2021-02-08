@@ -5,7 +5,7 @@ const storeData = (data, path) => {
   try {
     fs.writeFileSync(`${appRoot}/${path}`, JSON.stringify(data));
   } catch (err) {
-    console.error("Error (writing file)", err);
+    console.error('Error (writing file)', err);
   }
 };
 

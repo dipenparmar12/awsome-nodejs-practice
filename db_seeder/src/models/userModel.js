@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 /// Types
 const GENDER_MALE = 'male';
 const GENDER_FEMALE = 'female';
-const STATUS_ACTIVE = 1
-const STATUS_INACTIVE = 0
+const STATUS_ACTIVE = 1;
+const STATUS_INACTIVE = 0;
 
-const userTypes = {GENDER: [GENDER_MALE, GENDER_FEMALE], STATUS: [STATUS_ACTIVE, STATUS_INACTIVE]};
+const userTypes = { GENDER: [GENDER_MALE, GENDER_FEMALE], STATUS: [STATUS_ACTIVE, STATUS_INACTIVE] };
 
 const userSchema = mongoose.Schema({
   name: {
@@ -22,10 +22,12 @@ const userSchema = mongoose.Schema({
   },
   avatar: String,
   url: {
-    profiles: [{
-      website: String,
-      url: String,
-    }]
+    profiles: [
+      {
+        website: String,
+        url: String,
+      },
+    ],
   },
   gender: {
     type: String,
@@ -49,7 +51,7 @@ const userSchema = mongoose.Schema({
     default: STATUS_ACTIVE,
   },
   meta: {
-    created_at: {type: Date, default: Date.now},
+    created_at: { type: Date, default: Date.now },
     created_by: mongoose.Schema.Types.Mixed,
   },
   /// DataTypes
@@ -65,5 +67,5 @@ const userSchema = mongoose.Schema({
   // required: [true, '{} must be required for'],
 });
 
-module.exports.UserTypes = userTypes
-module.exports.Job = mongoose.model('USER', userSchema);
+module.exports = mongoose.model('User', userSchema);
+module.exports.UserTypes = userTypes;

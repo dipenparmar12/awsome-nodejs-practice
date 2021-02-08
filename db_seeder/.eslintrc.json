@@ -5,12 +5,10 @@
   },
   "extends": [
     "airbnb-base",
-    "plugin:jest/recommended",
     "plugin:security/recommended",
     "plugin:prettier/recommended"
   ],
   "plugins": [
-    "jest",
     "security",
     "prettier"
   ],
@@ -19,7 +17,6 @@
   },
   "rules": {
     "no-unused-vars": "warn",
-    "no-console": "warn",
     "func-names": "off",
     "no-underscore-dangle": "off",
     "consistent-return": "off",
@@ -28,6 +25,20 @@
     "no-multiple-empty-lines": "warn",
     "prefer-const": "off",
     "camelcase": "off",
+    "no-console": ["off",
+      {
+        "devDependencies": [
+          "development/**/*.js"
+        ]
+      }],
+    "no-unused-expressions": [
+      "off",
+      {
+        "devDependencies": [
+          "development/**/*.js"
+        ]
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "warn",
       {
