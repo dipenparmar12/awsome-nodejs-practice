@@ -26,7 +26,7 @@ cp .env.example .env
 
 ### Example
 
-Detailed example for generate json file which contains fake user's data. output file in `src/development/seedData/users.json`
+Detailed example to generate json file which contains fake user's data. output file in `src/development/seedData/users.json`
 
 #### # Command
 
