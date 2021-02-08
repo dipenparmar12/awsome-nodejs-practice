@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true,
     required: true,
-    enum: [...userTypes.GENDER],
+    enum: userTypes.GENDER,
     lowercase: true,
   },
   color: String,
@@ -45,7 +45,7 @@ const userSchema = mongoose.Schema({
   address: mongoose.Schema.Types.Mixed,
   status: {
     type: Number,
-    enum: [...userTypes.STATUS],
+    enum: userTypes.STATUS,
     default: STATUS_ACTIVE,
   },
   meta: {
