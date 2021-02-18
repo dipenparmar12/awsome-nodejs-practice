@@ -1,5 +1,3 @@
-const { isNull } = require('lodash');
-
 console.clear();
 
 const isAnagram = (s1, s2) => {

@@ -7,13 +7,15 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "nodemon -q src/challages/isAnagram.js",
+    "dev": "nodemon -q src/challages/capitalization.js",
 
     "test:palindrome": "jest src/challages/isPalindrome.test.js --watch",
     "test:maxchar": "jest src/challages/maxUsedChar.test.js --watch",
     "test:fizzbuzz": "jest src/challages/fizzbuzz.test.js --watch",
     "test:arrchunk": "jest src/challages/arrChuk.test.js --watch",
     "test:isAnagram": "jest src/challages/isAnagram.test.js --watch",
+    "test:capitalization": "jest src/challages/capitalization.test.js --watch",
+		
     "lint": "eslint ./src/**",
     "test": "jest",
     "coverage": "npm run test -- --coverage"
