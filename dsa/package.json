@@ -1,13 +1,13 @@
 {
   "name": "dsa",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Algorithms and data-structures implemented on JavaScript",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "dev": "nodemon -q src/challages/capitalization.js",
+    "dev": "nodemon -q src/challages/matrixSpiral.js",
 
     "test:palindrome": "jest src/challages/isPalindrome.test.js --watch",
     "test:maxchar": "jest src/challages/maxUsedChar.test.js --watch",
@@ -15,10 +15,15 @@
     "test:arrchunk": "jest src/challages/arrChuk.test.js --watch",
     "test:isAnagram": "jest src/challages/isAnagram.test.js --watch",
     "test:capitalization": "jest src/challages/capitalization.test.js --watch",
-		
+    "test:matrixSpiral": "jest src/challages/matrixSpiral.test.js --watch",
+
+    "dynamic:fibonacci": "nodemon -q src/dynamic_programing/fibonacci.js",
+    "dynamic:divisorGame": "nodemon -q src/dynamic_programing/divisorGame.js",
+
     "lint": "eslint ./src/**",
     "test": "jest",
-    "coverage": "npm run test -- --coverage"
+    "coverage": "npm run test -- --coverage",
+    "temp": "nodemon -q src/temp.js"
   },
   "devDependencies": {
     "@babel/cli": "7.12.10",

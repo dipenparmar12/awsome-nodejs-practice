@@ -16,6 +16,7 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "semi": "error",
     "no-unused-vars": "warn",
     "func-names": "off",
     "no-underscore-dangle": "off",
@@ -25,12 +26,15 @@
     "no-multiple-empty-lines": "warn",
     "prefer-const": "off",
     "camelcase": "off",
-    "no-console": ["off",
+    "no-plusplus": "off",
+    "no-console": [
+      "off",
       {
         "devDependencies": [
           "development/**/*.js"
         ]
-      }],
+      }
+    ],
     "no-unused-expressions": [
       "off",
       {
