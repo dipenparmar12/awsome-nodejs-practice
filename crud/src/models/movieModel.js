@@ -7,6 +7,7 @@ const movieSchema = mongoose.Schema({
     type: String,
     trim: true,
     required: true,
+    lowercase: true,
     minlength: 2,
     maxlength: [100, 'Length should not be greater then 100 char'],
   },

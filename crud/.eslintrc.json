@@ -27,6 +27,14 @@
     "security/detect-object-injection": "off",
     "no-multiple-empty-lines": "warn",
     "prefer-const": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        "devDependencies": [
+          "development/**/*.js"
+        ]
+      }
+    ]
   }
 }

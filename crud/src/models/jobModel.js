@@ -17,6 +17,7 @@ const jobSchema = mongoose.Schema({
     trim: true,
     // required: true,
     enum: [EMAIL_SCHEDULE, NOTIFICATION],
+    lowercase: true,
   },
   payload: {
     required: true,
@@ -35,6 +36,7 @@ const jobSchema = mongoose.Schema({
     type: String,
     enum: [PENDING, SUCCESSFUL, FAILED],
     default: PENDING,
+    lowercase: true,
   },
   fire_at: {
     type: Date,

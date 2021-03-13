@@ -14,6 +14,7 @@
     "start": "pm2 start ecosystem.config.json --no-daemon",
     "dev": "cross-env NODE_ENV=development nodemon src/index.js",
     "debug": "cross-env NODE_ENV=development PORT=3001 nodemon src/index.js",
+    "seed:jobs": "cross-env NODE_ENV=development SEED_COUNT=2 node src/development/fake_jobs.js",
     "test": "jest -i",
     "test:watch": "jest -i --watchAll",
     "coverage": "jest -i --coverage",
@@ -21,7 +22,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js",
-    "prettier:fix": "prettier --write **/*.js"
+    "prettier:fix": "prettier --write **/*.js",
+    "_db:seed": "node dev/import-dev-data.js --import",
+    "_db:fresh": "node dev/import-dev-data --delete && node dev/import-dev-data.js --import",
+    "db:clear": "cross-env NODE_ENV=development node src/development/database/removeCollections.js"
   },
   "keywords": [
     "node",
@@ -72,6 +76,7 @@
     "husky": "^4.2.3",
     "jest": "^26.0.1",
     "lint-staged": "^10.0.7",
+    "lodash": "^4.17.20",
     "node-mocks-http": "^1.8.0",
     "nodemon": "^2.0.0",
     "prettier": "^2.0.5",
