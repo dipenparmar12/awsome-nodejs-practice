@@ -1,0 +1,34 @@
+
+// // Index page Route
+// app.get('/conacts', (req, res) =>{
+//   res.json({'contacts':[1,2,3,]})
+//   // res.send("Hello world")
+// });
+
+// let router = express.Router();
+// router.get("/", (req, res) => { });
+// .post('/', (req,res)=>{})
+// .get('/:id', (req,res)=>{})
+// .patch('/:id', (req,res)=>{})
+// .delete('/:id', (req,res)=>{};)
+
+
+
+// //  Delete contact
+// app.delete('/contact', function (req, res) {
+//   // let contact_id = req.body;
+//   res.send("DELETE")
+
+//   // if (!contact_id) {
+//   //     return res.status(400).send({ error: true, message: 'Please provide contact_id' });
+//   // }
+//   // dbConn.query('DELETE FROM contacts WHERE id = ?', [contact_id], function (error, results, fields) {
+//   //     if (error) throw error;
+//   //     return res.send({ error: false, data: results, message: 'contact has been updated successfully.' });
+//   // });
+//   }); 
+
+
+
+ALTER TABLE contact_group ADD FOREIGN KEY (contact_id) REFERENCES contacts(id) ON DELETE CASCADE
+ALTER TABLE contact_groups ADD CONSTRAINT `FK_name` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`) ON DELETE CASCADE
