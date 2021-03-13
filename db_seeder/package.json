@@ -9,10 +9,10 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-    "debug": "cross-env NODE_ENV=development PORT=3001 nodemon src/index.js",
-    "seed:users": "cross-env NODE_ENV=development COUNT=3 node development/seeder/userSeeder.js",
-    "db:clear": "cross-env NODE_ENV=development node development/database/removeCollections.js"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js --import  Test=3 User=1",
+    "db:faker": "cross-env NODE_ENV=development nodemon src/index.js --faker usEr=2  Test=4 --exit",
+    "json:users": "cross-env NODE_ENV=development COUNT=3 node development/seeder/userJsonSeeder.js",
+    "debug": "cross-env NODE_ENV=development PORT=3001 nodemon src/index.js"
   },
   "keywords": [
     "Fake",

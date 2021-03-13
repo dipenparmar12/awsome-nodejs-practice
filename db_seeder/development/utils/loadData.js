@@ -1,11 +1,11 @@
 const fs = require('fs');
 
-const loadData = (path) => {
+const loadData = (path, jsonParse = false) => {
   try {
-    return fs.readFileSync(path, 'utf8');
+    return jsonParse ? JSON.parse(fs.readFileSync(path, 'utf8')) : fs.readFileSync(path, 'utf8');
   } catch (err) {
     console.error(err);
-    return false;
+    return null;
   }
 };
 
