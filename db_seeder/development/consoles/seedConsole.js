@@ -6,29 +6,38 @@ const properCase = (str) => str.charAt(0).toUpperCase() + str.substring(1).toLow
 const seedConsole = () => {
   const args = process.argv.slice(2).filter((arg) => !arg.startsWith('--') && arg);
   const options = process.argv.slice(2).filter((arg) => arg.startsWith('--') && arg);
+  // Object.fromEntries(
+  //     process.argv.slice(2)
+  //         .map((arg) => {
+  //           const [key, value=true] = arg.toLowerCase().split('=')
+  //           return [key,value]
+  //         })
+  // )
 
-  Array.from(args).forEach((argument) => {
-    const [arg, count = 1] = argument.split('=');
+  if (options) {
+    Array.from(args).forEach((argument) => {
+      const [arg, count = 1] = argument.split('=');
 
-    try {
-      const factoryName = `${arg.toLowerCase()}Factory`;
-      const modelName = properCase(arg); // User, teST => Test
+      try {
+        const factoryName = `${arg.toLowerCase()}Factory`;
+        const modelName = properCase(arg); // User, teST => Test
 
-      if (factories[factoryName] && models[properCase(arg)]) {
-        const fakeDataArray = factories[factoryName](count); // userFactory(), testFactory()
-        models[modelName]
-          .insertMany(fakeDataArray)
-          .then((r) => console.log(`${arg} => documents inserted Model-${modelName}:`, r.length));
-      } else {
-        console.error(
-          `${factoryName} or ${modelName} model not found`,
-          'please check factory/index.js & models/modelName.js file module is exported properly.'
-        );
+        if (factories[factoryName] && models[properCase(arg)]) {
+          const fakeDataArray = factories[factoryName](count); // userFactory(), testFactory()
+          models[modelName]
+            .insertMany(fakeDataArray)
+            .then((r) => console.log(`${arg} => documents inserted Model-${modelName}:`, r.length));
+        } else {
+          console.error(
+            `${factoryName} or ${modelName} model not found`,
+            'please check factory/index.js & models/modelName.js file module is exported properly.'
+          );
+        }
+      } catch (e) {
+        console.error('error::', arg, e);
       }
-    } catch (e) {
-      console.error('error::', arg, e);
-    }
-  });
+    });
+  }
 
   Array.from(options).forEach(async (arg) => {
     const [option, value = true] = arg.split('=');
