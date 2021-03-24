@@ -34,3 +34,20 @@ const insertion_sort__optimized = (arr = []) => {
 
 insertion_sort([3, 2, 1, 4, 5])
 insertion_sort__optimized([3, 44, 38, 5, 47, 5])
+
+// function insertionSort(inputArr) {
+//   let n = inputArr.length;
+//       for (let i = 1; i < n; i++) {
+//           // Choosing the first element in our unsorted subarray
+//           let current = inputArr[i];
+//           // The last element of our sorted subarray
+//           let j = i-1;
+//           while ((j > -1) && (current < inputArr[j])) {
+//               inputArr[j+1] = inputArr[j];
+//               j--;
+//           }
+//           inputArr[j+1] = current;
+//       }
+//   return inputArr;
+// }
+// https://stackabuse.com/insertion-sort-in-javascript/
