@@ -6,6 +6,10 @@
   "directories": {
     "test": "test"
   },
+  "references":[
+    "git@github.com:trekhleb/javascript-algorithms.git",
+    ""
+  ],
   "scripts": {
     "dev": "nodemon -q src/challages/matrixSpiral.js",
 
