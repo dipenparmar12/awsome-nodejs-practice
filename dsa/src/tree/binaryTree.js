@@ -90,6 +90,50 @@ class BST {
     return current
   }
 
+  bredthFirstSearch() {
+    let queue = [this.root]
+    let list = []
+    let current = null
+
+    while (queue.length > 0) {
+      current = queue.shift()
+      list.push(current.data)
+
+      if (current.left) queue.push(current.left)
+      if (current.right) queue.push(current.right)
+    }
+    return list
+  }
+
+  depthFirstSearch() {
+    let visited = []
+    let preOrderList = []
+    let node = this.root
+    let i = 0
+
+    while (node) {
+      node?.data &&
+        preOrderList.includes(node.data) === false &&
+        preOrderList.push(node.data)
+
+      node?.data && visited.push(node.data)
+
+      if (node.left && !visited.includes(node.left.data)) {
+        node = node.left
+      } else if (node.right && !visited.includes(node.right.data)) {
+        node = node.right
+      } else {
+        let index = visited.indexOf(node.data)
+        const previosNodeVal = visited.slice(index - 1, index).pop()
+        node = this.find(previosNodeVal)
+      }
+      i++
+    }
+
+    return preOrderList
+    // return visited
+  }
+
   print() {
     return this
   }
@@ -158,11 +202,14 @@ class BST {
 
 let bst = new BST()
 bst.add([10, 5, 13, 11, 2, 16, 7])
+// bst.add([10, 5, 13, 11, 2, 16, 7, 6, 8])
+// bst.remove(5) // TODO
+// bst.findMin()
+// bst.findMax()
+bst.bredthFirstSearch()
 bst.print()
 
-/*    
-
-
+/*
 // 10, 5, 13, 11, 2, 16, 7
           i
 
@@ -177,6 +224,13 @@ bst.print()
   2  7 11  16
 
 
+         10
+     /       \
+    05       13
+   / \      /  \
+  02  07   11  16
+     /  \
+    06  08
 */
 
 // tree = {
@@ -208,3 +262,67 @@ bst.print()
 //         }
 //     }
 // };
+
+/*
+
+// List:           10, 5, 13, 11, 2, 16, 7
+// DFS preOrder:   10, 5, 2, 7, 13, 11, 16 
+
+
+         10
+     /       \
+    05       13
+   / \      /  \
+  02  07   11  16
+     /  \
+    06  08
+
+    vis = [10]
+    
+    c=10, l=5
+    if -> c.left && not vis.indexOf(c.left)
+      current = c.left
+    
+    vis = [10, 5]
+    c=5, L=2
+    if -> c.left && not vis.indexOf(c.left) 
+      current = c.left
+
+    vis = [10, 5, 2]
+    c=2, L=not, R=not
+    if -> c.left && not vis.indexOf(c.left)
+    elseIf -> c.right && not vis.indexOf(c.right)
+    else -> current = vis.indexOf(c) - 1
+
+    vis = [10, 5, 2]
+    c=5, L=2 R=7
+    if -> c.left && not vis.indexOf(c.left)
+    elseIf-> c.right && not vis.indexOf(c.right)
+        current = c.right
+    
+    vis = [10, 5, 2, 7]
+    c=7 L=? R=?
+    if -> c.left && not vis.indexOf(c.left)
+    elseIf -> c.right && not vis.indexOf(c.right)
+    else -> current = vis.indexOf(c) - 1
+
+    vis = [10, 5, 2, 7]
+    c=2 L=? R=?
+    if -> c.left && not vis.indexOf(c.left)
+    elseIf -> c.right && not vis.indexOf(c.right)
+    else = current = vis.indexOf(c) - 1 // 5
+
+    vis = [10, 5, 2, 7]
+    c=5, L=2 R=7
+    if -> c.left && not vis.indexOf(c.left)
+    elseIf -> c.right && not vis.indexOf(c.right)
+    else = current = vis.indexOf(c) - 1 // 10
+    
+
+    vis = [10, 5, 2, 7]
+    c=10, L=5 R=13
+    if -> c.left && not vis.indexOf(c.left) then c=c.left
+    elseIf -> c.right && not vis.indexOf(c.right) then c=c.right 
+    else = current = vis.indexOf(c) - 1
+    
+*/
