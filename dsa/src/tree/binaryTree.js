@@ -105,10 +105,9 @@ class BST {
     return list
   }
 
-  depthFirstSearch() {
-    let visited = []
-    let preOrderList = []
+  DFSPreOrderMy() {
     let node = this.root
+    let preOrderList = []
     let i = 0
 
     while (node) {
@@ -116,22 +115,64 @@ class BST {
         preOrderList.includes(node.data) === false &&
         preOrderList.push(node.data)
 
-      node?.data && visited.push(node.data)
-
-      if (node.left && !visited.includes(node.left.data)) {
+      if (node.left && !preOrderList.includes(node.left.data)) {
         node = node.left
-      } else if (node.right && !visited.includes(node.right.data)) {
+      } else if (node.right && !preOrderList.includes(node.right.data)) {
         node = node.right
       } else {
-        let index = visited.indexOf(node.data)
-        const previosNodeVal = visited.slice(index - 1, index).pop()
+        let index = preOrderList.indexOf(node.data)
+        const previosNodeVal = preOrderList.slice(index - 1, index).pop()
         node = this.find(previosNodeVal)
       }
-      i++
+      // if (++i && i === 100) return null
+    }
+    return preOrderList
+  }
+
+  // [root,left,right]
+  DFSPreOrder() {
+    let node = this.root
+    let preOrderList = []
+    let i = 0
+
+    function traverse(node) {
+      preOrderList.push(node.data)
+      node.left && traverse(node.left)
+      node.right && traverse(node.right)
     }
 
+    traverse(node)
+
     return preOrderList
-    // return visited
+  }
+
+  // [left,right,root]
+  DFSPostOrder() {
+    let node = this.root
+    let postOrder = []
+
+    function traverse(node) {
+      node.left && traverse(node.left)
+      node.right && traverse(node.right)
+      postOrder.push(node.data)
+      return postOrder
+    }
+
+    return traverse(node)
+  }
+  // [left,root,right]
+  DFSInOrder() {
+    let node = this.root
+    let postOrder = []
+
+    function traverse(node) {
+      node.left && traverse(node.left)
+      postOrder.push(node.data)
+      node.right && traverse(node.right)
+      return postOrder
+    }
+
+    return traverse(node)
   }
 
   print() {
