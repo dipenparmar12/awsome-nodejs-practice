@@ -8,6 +8,7 @@
   },
   "references":[
     "git@github.com:trekhleb/javascript-algorithms.git",
+    "git@github.com:akueisara/hackerrank.git",
     ""
   ],
   "scripts": {

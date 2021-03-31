@@ -43,8 +43,24 @@ function LinkedList() {
       }
       currentNode.next = node
     }
-
     len++
+    
+    /*
+    
+    const newNode = new Node(data)
+    if (head == null) {
+	return newNode;
+    }else {
+	if(head.next == null ) {
+	    head.next = newNode
+	}else {
+	    this.add(head.next, data)
+	}
+	return head
+    }
+    
+    */
+
   }
 
   this.remove = function (el) {
