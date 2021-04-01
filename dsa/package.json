@@ -9,6 +9,7 @@
   "references":[
     "git@github.com:trekhleb/javascript-algorithms.git",
     "git@github.com:akueisara/hackerrank.git",
+    "git@github.com:RyanFehr/HackerRank.git",
     ""
   ],
   "scripts": {
