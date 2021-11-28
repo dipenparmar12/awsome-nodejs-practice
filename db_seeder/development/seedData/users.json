@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Joy Kerluke",
+    "email": "Carmine8@yahoo.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ddggccaa/128.jpg",
+    "url": {
+      "profiles": []
+    },
+    "gender": "male",
+    "color": "black",
+    "dob": "2021-01-12T05:32:29.162Z",
+    "age": 33,
+    "address": "4182 Zboncak Cape",
+    "bio": "Quos sit doloremque quae impedit esse dignissimos consequatur sint autem.",
+    "status": 0,
+    "meta": {
+      "count": 1,
+      "created_at": "2020-12-05T08:25:58.026Z"
+    }
+  },
+  {
+    "name": "Johanna Mitchell",
+    "email": "Eulalia_Grady@hotmail.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/kumarrajan12123/128.jpg",
+    "url": {
+      "profiles": []
+    },
+    "gender": "male",
+    "color": "orange",
+    "dob": "2020-10-04T18:04:00.427Z",
+    "age": 56,
+    "address": "5613 Ledner Knoll",
+    "bio": "Temporibus quaerat modi commodi numquam dicta.",
+    "status": 1,
+    "meta": {
+      "count": 2,
+      "created_at": "2020-05-10T11:49:03.655Z"
+    }
+  },
+  {
+    "name": "Gabriel Kunze",
+    "email": "Collin40@hotmail.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jghyllebert/128.jpg",
+    "url": {
+      "profiles": [
+        {
+          "website": "lukas.org",
+          "url": "http://raphaelle.biz"
+        },
+        {
+          "website": "cordia.com",
+          "url": "http://madisyn.com"
+        },
+        {
+          "website": "stephen.biz",
+          "url": "http://athena.com"
+        }
+      ]
+    },
+    "gender": "male",
+    "color": "plum",
+    "dob": "2020-08-06T11:55:42.412Z",
+    "age": 43,
+    "address": "589 Verna Lakes",
+    "bio": "Aliquid eius nemo.",
+    "status": 0,
+    "meta": {
+      "count": 3,
+      "created_at": "2020-11-14T13:03:38.149Z"
+    }
+  },
+  {
+    "name": "Ebony Hahn",
+    "email": "Naomie51@gmail.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/dc_user/128.jpg",
+    "url": {
+      "profiles": [
+        {
+          "website": "jamal.org",
+          "url": "http://barbara.info"
+        },
+        {
+          "website": "margot.net",
+          "url": "http://matteo.name"
+        }
+      ]
+    },
+    "gender": "female",
+    "color": "mint green",
+    "dob": "2020-03-12T17:29:25.133Z",
+    "age": 52,
+    "address": "16816 Guiseppe Stream",
+    "bio": "Dolorum et minima voluptas vero qui numquam amet qui voluptate.",
+    "status": 1,
+    "meta": {
+      "count": 4,
+      "created_at": "2020-05-08T02:00:29.170Z"
+    }
+  }
+]
