@@ -33,6 +33,7 @@
   },
   "scripts": {
     "start": "node src/app.js",
+    "deploy": "git push heroku node_auth_email:main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
