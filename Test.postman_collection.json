@@ -89,7 +89,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzMjM0MjAwMTAxOTA0Nzg0ZGUxNTkiLCJjb2RlIjoiNTQ3NCIsImlhdCI6MTYzODA4MTM0NiwiZXhwIjoxNjM4MDgxNjQ2fQ.N-X0_wO6nSs3lBqd7bjnrx15i2AB7ZLiC3ZejUo1x5I\",\r\n    \"code\": \"5474\"\r\n}",
+							"raw": "{\r\n    \r\n    \"code\": \"8167\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzMzc3MDc0ODU2MDY5NTQwMzA2ZDUiLCJjb2RlIjoiODE2NyIsImlhdCI6MTYzODA4NjUxMiwiZXhwIjoxNjM4MDg2ODEyfQ.HNsBAMx3zETUO3YuX6NUuHez9KrzKRDC6WyvlOaTaGM\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -116,7 +116,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWEzMjBiNWNmOGJiYjU1NDg4MzNiMDMiLCJjb2RlIjoiODMxNiIsImlhdCI6MTYzODA4MDY5MywiZXhwIjoxNjM4MDgwOTkzfQ.t7EBOokunuFkWD6MuLgo3QEZyZFxSYjNpGIdAjKyPZo\",\r\n    \"code\": \"1234\"\r\n}",
+							"raw": "{\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -172,7 +172,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"dipen@tipstat.com\",\r\n    \"password\": \"admin@123\"\r\n}",
+					"raw": "{\r\n    \"email\": \"dipen@tempr.email\",\r\n    \"password\": \"admin@123\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
