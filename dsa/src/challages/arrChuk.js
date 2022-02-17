@@ -18,6 +18,14 @@ const arrChuk = (arr, chunkSize) => {
   //   inx += chunkSize;
   // }
 
+  // function each(callback, len, inc = 1) {
+  //   let inx = 0;
+  //   while (inx < len) {
+  //     callback(inx);
+  //     inx += inc;
+  //   }
+  // }
+
   return output;
 };
 
