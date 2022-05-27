@@ -1,6 +1,6 @@
-console.clear()
-console.log(new Date(), '-----------')
-const log = console.log
+// console.clear()
+// console.log(new Date(), '-----------')
+// const log = console.log
 
 
 /**
@@ -21,22 +21,16 @@ const log = console.log
  * replacePlaceholders(str, obj, pattern) // 'Hello world!'
  */
 function replacePlaceholders(str, obj, pattern = /\{\{(.*?)\}\}/g) {
-  return str.replace(pattern, function(match, key) {
-    return obj[key] || ''
-  })
-  // return str.replace(pattern, (match, key) => obj[key] || '')
+  return str.replace(pattern, (match, key) => obj[key] || '')
 }
 
 
-const str = 'Hello ${NAME} ${name}! ${AGE}'
-const obj = { NAME: 'parmar', AGE: 1001 }
-const pattern = /\$\{([^}]+)\}/g
-replacePlaceholders(str, obj, pattern)
-
-
-console.log(
-  replacePlaceholders(str, obj, pattern)
-)
+// const str = 'Hello ${NAME} ${NAME}! ${AGE}'
+// const obj = { NAME: 'parmar', AGE: 123 }
+// const pattern = /\$\{([^}]+)\}/g
+// console.log(
+//   replacePlaceholders(str, obj, pattern)
+// )
 
 // default export replacePlaceholders
 // module.exports = replacePlaceholders

@@ -6,15 +6,15 @@
   "directories": {
     "test": "test"
   },
-  "references":[
+  "references": [
     "git@github.com:trekhleb/javascript-algorithms.git",
     "git@github.com:akueisara/hackerrank.git",
     "git@github.com:RyanFehr/HackerRank.git",
     ""
   ],
   "scripts": {
+    "start": "nodemon -q src/index.js",
     "dev": "nodemon -q src/challages/matrixSpiral.js",
-
     "test:palindrome": "jest src/challages/isPalindrome.test.js --watch",
     "test:maxchar": "jest src/challages/maxUsedChar.test.js --watch",
     "test:fizzbuzz": "jest src/challages/fizzbuzz.test.js --watch",
@@ -22,10 +22,8 @@
     "test:isAnagram": "jest src/challages/isAnagram.test.js --watch",
     "test:capitalization": "jest src/challages/capitalization.test.js --watch",
     "test:matrixSpiral": "jest src/challages/matrixSpiral.test.js --watch",
-
     "dynamic:fibonacci": "nodemon -q src/dynamic_programing/fibonacci.js",
     "dynamic:divisorGame": "nodemon -q src/dynamic_programing/divisorGame.js",
-
     "lint": "eslint ./src/**",
     "test": "jest",
     "coverage": "npm run test -- --coverage",
