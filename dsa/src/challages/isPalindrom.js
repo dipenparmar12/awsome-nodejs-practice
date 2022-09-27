@@ -5,12 +5,10 @@ function palindrom(str){
     let endChar = str.length - 1
 
     while(startChar < endChar){
-
         if(str.charAt(startChar) !== str.charAt(endChar)){
             console.log(str, false)
             return false
         }
-        
         startChar++
         endChar--
     }

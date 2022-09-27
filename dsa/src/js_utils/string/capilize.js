@@ -13,6 +13,6 @@ export default capitalize
 /*
  * @src https://github.com/andrewcourtice/harlem/blob/main/app/src/utilities/string/capitalise.ts
  */
-function capitalise(value: string): string {
+function capitalise(value) {
   return value.replace(/^(.)|\s+(.)/g, (char) => char.toUpperCase())
 }
