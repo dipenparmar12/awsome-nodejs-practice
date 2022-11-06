@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  mongod_db:
+    container_name: app_mongo_db
+    image: mongo:6.0.2-focal
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  node_auth_email:
+    build: .
+    container_name: node_auth_email
+    volumes:
+      - ./:/app
+    ports:
+      - 8000:3001
+    depends_on:
+      - mongod_db
+    environment:
+      DB_URI: mongodb://app_mongo_db:27017
+      JWT_SECRET_KEY: JWT_SECRET_KEY_HERE
+      REFRESH_TOKEN_SECRET_KEY: REFRESH_TOKEN_SECRET_KEY_HERE
+
+      EMAIL_HOST: smtp.ethereal.email
+      EMAIL_PORT: 587
+      EMAIL_USER: qgiutwyya4hdvwms@ethereal.email
+      EMAIL_PASS: 37UNpnjWdzTNBUdsmc
+      EMAIL_FROM: info@nodejs.com
+
+      AWS_REGION: AWS_REGION_HERE
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID_HERE
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY_HERE
+
+volumes:
+  mongo_db: {}
