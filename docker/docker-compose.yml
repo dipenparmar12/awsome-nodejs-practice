@@ -1,4 +1,5 @@
 version: '3.9'
+# docker run -it mongo:6.0.2-focal mongosh "mongodb://root:password@mongo_db:27017/"
 
 services:
   node:
@@ -12,3 +13,14 @@ services:
       - 8000:3001
     env_file:
       - ./.env
+  mongo_db:
+    image: mongo:6.0.2-focal
+    container_name: mongo_db
+    restart: always # if it's fails 
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      # - VAR_ANME=VALUE
+      # VAR_ANME: VALUE
