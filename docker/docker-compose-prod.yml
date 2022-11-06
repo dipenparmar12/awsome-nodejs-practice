@@ -2,9 +2,15 @@ version: '3.9'
 
 services:
   node:
+    build:
+      context: .
+      args:
+        NODE_ENV: production
     container_name: node
-    build: .
     read_only: true
+    environment:
+      - NODE_ENV=production
+    command: node src/app.js
     volumes:
       - ./:/app
       - /app/node_modules

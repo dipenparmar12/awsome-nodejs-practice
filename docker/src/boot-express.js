@@ -12,7 +12,8 @@ function expressHandler(app){
 
 
   app.get('/', (_req, res) => {
-    return res.status(200).json({ message: 'Service is running...', }).end();
+    console.log('boot-express.js::[15].', new Date() )
+    return res.status(200).json({ message: 'Service is running', }).end();
   });
   
 

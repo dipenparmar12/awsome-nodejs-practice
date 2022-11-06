@@ -5,8 +5,15 @@ WORKDIR /app
 COPY package*.json ./
 COPY .env ./
 
-RUN npm install 
-# RUN npm ci
+
+ARG NODE_ENV
+RUN if [ "$NODE_ENV" = "development" ]; \
+  then npm install; \
+  else npm install --only=production; \
+  fi
+
+# RUN npm install 
+# RUN npm ci ## install dep with only package-lock.josn file 
 # RUN npm install -g nodemon
 
 COPY . .

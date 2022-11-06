@@ -14,7 +14,7 @@ app.listen(port, err => {
     console.log('app.js::[15] err', err)
     return process.exit(1);
   }
-  console.log(`Server is running on ${port}`);
+  console.log(`Server is running on ${process.env.NODE_ENV}:${port}`);
 });
 
 export default app
