@@ -6,6 +6,7 @@ const router = Router();
 
 // AUTH
 router.post('/', register);
+router.post('/user', register);
 router.post('/login', login);
 router.post('/logout', auth, logout);
 router.post('/verify-email', verifyEmail);
