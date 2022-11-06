@@ -1,9 +1,9 @@
-FROM node:alpine
+FROM node:16.3.0-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
-COPY .env .
+COPY .env ./
 
 RUN npm install 
 # RUN npm ci
@@ -11,6 +11,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+ENV PORT=3001
+EXPOSE $PORT
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

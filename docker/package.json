@@ -4,7 +4,7 @@
   "description": "You can use this template when you're starting a new project. It contains general concepts, you can customize it according to your needs.",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -q src/app.js",
+    "dev": "nodemon -L src/app.js",
     "start": "node src/app.js"
   },
   "dependencies": {

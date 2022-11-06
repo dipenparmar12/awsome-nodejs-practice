@@ -25,7 +25,7 @@ function expressHandler(app){
   app.use((error, req, res, _next) => {
     res.status(error.status || 500);
     const level = error.status === 500 ?  'Server Error' : 'Client Error';
-    return res.json({ message: error.message });
+    return res.json( { message:level, log:error.message });
   });
 }
 
