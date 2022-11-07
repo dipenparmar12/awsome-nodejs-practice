@@ -14,7 +14,11 @@ Open: Logs for both node instances in different terminals and hit node_app endpo
 
 
 ### To Create fresh image pass '--build' arg 
-For Development: docker-compose -f docker-compose.yml -f docker-compose-dev.yml up --build
+
+`docker-compose -f docker-compose.yml -f docker-compose-dev.yml up --build`
+
+Create new volume for container (ex. if we added new npm package, like **npm add something**) 
+`docker-compose -f docker-compose.yml -f docker-compose-dev.yml up --build -V`
 
 ### Connect mongoDB
 mongodb://root:password@localhost:27017/
