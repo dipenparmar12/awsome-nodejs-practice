@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  node:
+    build:
+      context: .
+      args:
+        NODE_ENV: development # Used in 'DockerFile'
+    environment:
+      - NODE_ENV=development
+      # - MONGO_IP=
+      # - MONGO_PORT=
+      - MONGO_USER=root
+      - MONGO_PASSWORD=password
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+    command: npm run dev
+
+  mongo_db:
+    volumes:
+      - mongo_dev_vol:/data/db
+
+volumes:
+  mongo_dev_vol: {}

@@ -1,0 +1,35 @@
+{
+  "name": "nodejs-starter-template",
+  "version": "1.0.0",
+  "description": "You can use this template when you're starting a new project. It contains general concepts, you can customize it according to your needs.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon -L src/app.js",
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "xxxxx": "^1.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahricanyesil/nodejs-starter-template.git"
+  },
+  "keywords": [
+    "node.js",
+    "boilerplate",
+    "starter",
+    "template"
+  ],
+  "author": "Bahrican Yesil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahricanyesil/nodejs-starter-template/issues"
+  },
+  "homepage": "https://github.com/bahricanyesil/nodejs-starter-template#readme",
+  "type": "module"
+}
