@@ -8,13 +8,8 @@ For Production: docker-compose -f docker-compose.yml -f docker-compose-prod.yml 
 docker-compose -f docker-compose.yml -f docker-compose-dev.yml down -v
 docker-compose -f docker-compose.yml -f docker-compose-prod.yml down -v
 
-### Connect mongoDB shell ::TODO::
-docker run -it mongo:6.0.2-focal mongosh "connection_url"
-docker run -it mongo:6.0.2-focal mongosh "mongo://root:password@localhost:27017/" # MongoNetworkError: getaddrinfo ENOTFOUND mongo
-docker run -it mongo:6.0.2-focal mongosh "mongodb+srv://root:password@mongo_db" # Error: querySrv ENOTFOUND _mongodb._tcp.mongo_db
-docker run -it mongo:6.0.2-focal mongosh "mongodb://root:password@mongo_db:27017" # MongoNetworkError: getaddrinfo ENOTFOUND mongo_db
-docker run -it mongo:6.0.2-focal mongosh "mongodb://root:password@localhost:27017" # MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017
-docker run -it mongo:6.0.2-focal mongosh "mongodb://root:password@localhost:27017/" #
+### Connect mongoDB
+mongodb://root:password@localhost:27017/
 
 ## MongoDB data export/import docker commands 
 https://www.mongodb.com/compatibility/docker

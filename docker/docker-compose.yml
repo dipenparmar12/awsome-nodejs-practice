@@ -14,7 +14,7 @@ services:
     env_file:
       - ./.env
   mongo_db:
-    image: mongo:6.0.2-focal
+    image: mongo:latest
     container_name: mongo_db
     restart: always # if it's fails 
     ports:
