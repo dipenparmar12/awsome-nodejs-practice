@@ -1,0 +1,35 @@
+version: '3.9'
+# docker run -it mongo:6.0.2-focal mongosh "mongodb://root:password@mongo_db:27017/"
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.23.2-alpine
+    volumes:
+      - ./docker_config/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+  node:
+    # container_name: node ## Multiple instances throws error let docker defined container names 
+    build: .
+    read_only: true
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    env_file:
+      - ./.env
+    depends_on:
+      - mongo_db
+    # ports:  
+    #   - 8000:3001 ## handle by NIGNX
+
+  mongo_db:
+    image: mongo:latest
+    container_name: mongo_db
+    restart: always # if it's fails 
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      # - VAR_ANME=VALUE
+      # VAR_ANME: VALUE
