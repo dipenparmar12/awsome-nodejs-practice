@@ -19,9 +19,6 @@ services:
     command: npm run dev
 
   mongo_db:
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongo_dev_vol:/data/db
 
