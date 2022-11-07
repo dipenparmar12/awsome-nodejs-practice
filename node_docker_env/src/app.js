@@ -13,7 +13,7 @@ const app = express()
 
 app.get('/db', (_req, res) => {
   getMongoDatabases().then(databases => { 
-    console.log('boot-express.js::[20] DATABASES', databases)
+    console.log('app.js::[16] DATABASES::', databases)
     return res.status(200).json({ message: 'Databases', data:databases }).end();
   })
 });
@@ -21,7 +21,6 @@ app.get('/db', (_req, res) => {
 
 await bootExpress(app)
 await bootMongoose()
-
 
 app.listen(port, err => {
   if (err) {
