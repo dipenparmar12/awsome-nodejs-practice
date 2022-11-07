@@ -11,10 +11,10 @@ services:
         NODE_ENV: production
     environment:
       - NODE_ENV=production
-      # - MONGO_IP=
-      # - MONGO_PORT=
-      - MONGO_USER=prod_user
-      - MONGO_PASSWORD=prod_password
+      # - MONGO_IP=production_ip
+      # - MONGO_PORT=${MONGO_PORT}
+      - MONGO_USER=${PROD_USER}
+      - MONGO_PASSWORD=${PROD_PASSWORD}
     command: node src/app.js
     volumes:
       - ./:/app
@@ -23,6 +23,9 @@ services:
     #   - ./.env.production
 
   mongo_db:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
       - mongo_prod_vol:/data/db
 
