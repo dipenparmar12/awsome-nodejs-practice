@@ -11,6 +11,9 @@ function expressHandler(app){
     console.log(ex);
   });
 
+
+  app.enable('trust proxy') // NGINX config 
+
   app.get('/', (_req, res) => {
     console.log('boot-express.js::[15].', new Date() )
     return res.status(200).json({ message: 'Service is running', }).end();
